@@ -1,0 +1,33 @@
+<!-- <h1>New Game</h1>
+<ul class="letters">
+    <% @letters.each do |letter| %>
+    <li><%= letter %></li>
+    <% end %>
+</ul>
+<h2>Whats is the longest word you can find?</h2>
+<form action="/score" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="formulario">
+        <input type="text" name="word">
+        <input type="submit" value="Play!">
+    </div>
+    <!-- <%= hidden_field_tag :letters, @letters %> -->
+<!-- </form> --> -->
+
+
+<ul class="letters">
+    <% @letters.each do |letter| %>
+      <li><%= letter %></li>
+    <% end %>
+</ul>
+<p class="form-prefix">What is the longest word you can find?</p>
+<form action="/score" method="POST" class="form-inline">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="input-group input-group">
+        <input type="text" name="word" class="form-control">
+        <span class="input-group-btn">
+        <input type="submit" value="Play" class="btn btn-default">
+        </span>
+    </div>
+</form>
